@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .count {
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            font-weight: bold;
+            color: white;
+            background: #4f46e5;
+            border-radius: 20px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .count:hover {
+            transform: scale(1.08);
+            background: #4338ca;
+        }
+
+        .count:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="count">Click</p>
+
+    <script>
+       
+        function loop(i = 1) {
+
+            document.querySelector(".count").innerText = i
+
+            if(i <= 9 ){
+
+            setTimeout(()=>{
+
+                 loop(i + 1);
+
+            },500)
+        }
+
+        }
+
+count = document.querySelector(".count")
+
+count.addEventListener("click", () => {
+    loop();
+});
+    
+
+
+    </script>
+
+</body>
+
+</html>
